@@ -1,14 +1,30 @@
 Q: DESCRIBE YOUR IDEA.
-A:
+A:Create a gaming web based application for college students where users can
+create and join lobbys for different games, inform people what and when they
+are planning to play,etc.
 
 Q: WHAT REAL WORLD PROBLEM(S) ARE YOU TRYING TO SOLVE?
-A:
+A:Trying to remove the hurdle of people having to search for other interested
+gamers because of not knowing their interests or not having a suitable 
+platform to discuss such things
 
 Q: HAS IT ALREADY BEEN IMPLEMENTED BEFORE?
-A:
+A:currently existing applications cater to creating online lobbys and not
+for organizing such events where players come together to the same place
+and play together as a team(eg in college).
+OR
+it can also be used by fest organizers to make the process of registering
+automatic.
 
 Q: IF YES, HOW IS IT GOING TO BE DIFFERENT FROM EXISTING PRODUCTS?
-A:
+A:already answered :P
 
 Q: WHAT TECHNOLOGIES DO YOU WANT TO USE (OPTIONAL)?
 A:
+Machine learning
+Aerodynamics
+Quantum Physics
+Rocket science
+MRI scanner
+Chemistry
+XD lol
