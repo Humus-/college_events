@@ -1,26 +1,241 @@
-<!Doctype html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
-  <head>
-    <meta name="google-signin-scope" content="profile email">
-    <meta name="google-signin-client_id" content="512696850874-k9gs9keag7c6839p62d4bu2srdfc7hh2.apps.googleusercontent.com">
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
-  </head>
-  <body>
-    <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
-      <script>
-        function onSignIn(googleUser) {
-          // Useful data for your client-side scripts:
-          var profile = googleUser.getBasicProfile();
-          console.log("ID: " + profile.getId()); // Don't send this directly to your server!
-          console.log("Name: " + profile.getName());
-          console.log("Image URL: " + profile.getImageUrl());
-          console.log("Email: " + profile.getEmail());
-
-          // The ID token you need to pass to your backend:
-          var id_token = googleUser.getAuthResponse().id_token;
-          console.log("ID Token: " + id_token);
-        };
-      </script>
-  </body>
-  hello world!
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1265.21">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Consolas; color: #323333}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Consolas; min-height: 14.0px}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Consolas; color: #63a35c}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Consolas; color: #183691}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Consolas; color: #795da3}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Consolas; color: #969896}
+    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Consolas; color: #323333; min-height: 14.0px}
+    span.s1 {letter-spacing: 0.0px}
+    span.s2 {letter-spacing: 0.0px; color: #323333}
+    span.s3 {letter-spacing: 0.0px; color: #63a35c}
+    span.s4 {letter-spacing: 0.0px; color: #795da3}
+    span.s5 {letter-spacing: 0.0px; color: #183691}
+    span.s6 {letter-spacing: 0.0px; color: #a71d5d}
+    span.s7 {letter-spacing: 0.0px; color: #0086b3}
+    table.t1 {border-collapse: collapse}
+    td.td1 {width: 928.0px; padding: 0.0px 10.0px 0.0px 10.0px}
+    td.td2 {width: 50.0px; min-width: 50.0px; border-style: solid; border-width: 0.0px 1.0px 0.0px 0.0px; border-color: transparent #eeeeee transparent transparent; padding: 0.0px 10.0px 0.0px 10.0px}
+  </style>
+</head>
+<body>
+<table cellspacing="0" cellpadding="0" class="t1">
+  <tbody>
+    <tr>
+      <td colspan="2" valign="top" class="td1">
+        <p class="p1"><span class="s1">&lt;!Doctype html&gt;</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="td2">
+        <p class="p2"><span class="s1"></span><br></p>
+      </td>
+      <td valign="top" class="td1">
+        <p class="p3"><span class="s2">&lt;</span><span class="s1">html</span><span class="s2">&gt;</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="td2">
+        <p class="p2"><span class="s1"></span><br></p>
+      </td>
+      <td valign="top" class="td1">
+        <p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;</span><span class="s3">head</span><span class="s1">&gt;</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="td2">
+        <p class="p2"><span class="s1"></span><br></p>
+      </td>
+      <td valign="top" class="td1">
+        <p class="p4"><span class="s2"><span class="Apple-converted-space">    </span>&lt;</span><span class="s3">meta</span><span class="s2"> </span><span class="s4">name</span><span class="s2">=</span><span class="s1">"google-signin-scope"</span><span class="s2"> </span><span class="s4">content</span><span class="s2">=</span><span class="s1">"profile email"</span><span class="s2">&gt;</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="td2">
+        <p class="p2"><span class="s1"></span><br></p>
+      </td>
+      <td valign="top" class="td1">
+        <p class="p4"><span class="s2"><span class="Apple-converted-space">    </span>&lt;</span><span class="s3">meta</span><span class="s2"> </span><span class="s4">name</span><span class="s2">=</span><span class="s1">"google-signin-client_id"</span><span class="s2"> </span><span class="s4">content</span><span class="s2">=</span><span class="s1">"512696850874-k9gs9keag7c6839p62d4bu2srdfc7hh2.apps.googleusercontent.com"</span><span class="s2">&gt;</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="td2">
+        <p class="p2"><span class="s1"></span><br></p>
+      </td>
+      <td valign="top" class="td1">
+        <p class="p4"><span class="s2"><span class="Apple-converted-space">    </span>&lt;</span><span class="s3">script</span><span class="s2"> </span><span class="s4">src</span><span class="s2">=</span><span class="s1">"https://apis.google.com/js/platform.js"</span><span class="s2"> </span><span class="s4">async</span><span class="s2"> </span><span class="s4">defer</span><span class="s2">&gt;&lt;/</span><span class="s3">script</span><span class="s2">&gt;</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="td2">
+        <p class="p2"><span class="s1"></span><br></p>
+      </td>
+      <td valign="top" class="td1">
+        <p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/</span><span class="s3">head</span><span class="s1">&gt;</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="td2">
+        <p class="p2"><span class="s1"></span><br></p>
+      </td>
+      <td valign="top" class="td1">
+        <p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;</span><span class="s3">body</span><span class="s1">&gt;</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="td2">
+        <p class="p2"><span class="s1"></span><br></p>
+      </td>
+      <td valign="top" class="td1">
+        <p class="p5"><span class="s2"><span class="Apple-converted-space">    </span>&lt;</span><span class="s3">div</span><span class="s2"> </span><span class="s1">class</span><span class="s2">=</span><span class="s5">"g-signin2"</span><span class="s2"> </span><span class="s1">data-onsuccess</span><span class="s2">=</span><span class="s5">"onSignIn"</span><span class="s2"> </span><span class="s1">data-theme</span><span class="s2">=</span><span class="s5">"dark"</span><span class="s2">&gt;&lt;/</span><span class="s3">div</span><span class="s2">&gt;</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="td2">
+        <p class="p2"><span class="s1"></span><br></p>
+      </td>
+      <td valign="top" class="td1">
+        <p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;</span><span class="s3">script</span><span class="s1">&gt;</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="td2">
+        <p class="p2"><span class="s1"></span><br></p>
+      </td>
+      <td valign="top" class="td1">
+        <p class="p1"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s6">function</span><span class="s1"> </span><span class="s4">onSignIn</span><span class="s1">(googleUser) {</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="td2">
+        <p class="p2"><span class="s1"></span><br></p>
+      </td>
+      <td valign="top" class="td1">
+        <p class="p6"><span class="s2"><span class="Apple-converted-space">          </span></span><span class="s1">// Useful data for your client-side scripts:</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="td2">
+        <p class="p2"><span class="s1"></span><br></p>
+      </td>
+      <td valign="top" class="td1">
+        <p class="p1"><span class="s1"><span class="Apple-converted-space">          </span></span><span class="s6">var</span><span class="s1"> profile </span><span class="s6">=</span><span class="s1"> googleUser.</span><span class="s4">getBasicProfile</span><span class="s1">();</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="td2">
+        <p class="p2"><span class="s1"></span><br></p>
+      </td>
+      <td valign="top" class="td1">
+        <p class="p6"><span class="s2"><span class="Apple-converted-space">          </span></span><span class="s4">console</span><span class="s2">.</span><span class="s7">log</span><span class="s2">(</span><span class="s5">"ID: "</span><span class="s2"> </span><span class="s6">+</span><span class="s2"> profile.</span><span class="s4">getId</span><span class="s2">()); </span><span class="s1">// Don't send this directly to your server!</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="td2">
+        <p class="p2"><span class="s1"></span><br></p>
+      </td>
+      <td valign="top" class="td1">
+        <p class="p1"><span class="s1"><span class="Apple-converted-space">          </span></span><span class="s4">console</span><span class="s1">.</span><span class="s7">log</span><span class="s1">(</span><span class="s5">"Name: "</span><span class="s1"> </span><span class="s6">+</span><span class="s1"> profile.</span><span class="s4">getName</span><span class="s1">());</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="td2">
+        <p class="p2"><span class="s1"></span><br></p>
+      </td>
+      <td valign="top" class="td1">
+        <p class="p1"><span class="s1"><span class="Apple-converted-space">          </span></span><span class="s4">console</span><span class="s1">.</span><span class="s7">log</span><span class="s1">(</span><span class="s5">"Image URL: "</span><span class="s1"> </span><span class="s6">+</span><span class="s1"> profile.</span><span class="s4">getImageUrl</span><span class="s1">());</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="td2">
+        <p class="p2"><span class="s1"></span><br></p>
+      </td>
+      <td valign="top" class="td1">
+        <p class="p1"><span class="s1"><span class="Apple-converted-space">          </span></span><span class="s4">console</span><span class="s1">.</span><span class="s7">log</span><span class="s1">(</span><span class="s5">"Email: "</span><span class="s1"> </span><span class="s6">+</span><span class="s1"> profile.</span><span class="s4">getEmail</span><span class="s1">());</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="td2">
+        <p class="p2"><span class="s1"></span><br></p>
+      </td>
+      <td valign="top" class="td1">
+        <p class="p7"><span class="s1"></span><br></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="td2">
+        <p class="p2"><span class="s1"></span><br></p>
+      </td>
+      <td valign="top" class="td1">
+        <p class="p6"><span class="s2"><span class="Apple-converted-space">          </span></span><span class="s1">// The ID token you need to pass to your backend:</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="td2">
+        <p class="p2"><span class="s1"></span><br></p>
+      </td>
+      <td valign="top" class="td1">
+        <p class="p1"><span class="s1"><span class="Apple-converted-space">          </span></span><span class="s6">var</span><span class="s1"> id_token </span><span class="s6">=</span><span class="s1"> googleUser.</span><span class="s4">getAuthResponse</span><span class="s1">().id_token;</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="td2">
+        <p class="p2"><span class="s1"></span><br></p>
+      </td>
+      <td valign="top" class="td1">
+        <p class="p1"><span class="s1"><span class="Apple-converted-space">          </span></span><span class="s4">console</span><span class="s1">.</span><span class="s7">log</span><span class="s1">(</span><span class="s5">"ID Token: "</span><span class="s1"> </span><span class="s6">+</span><span class="s1"> id_token);</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="td2">
+        <p class="p2"><span class="s1"></span><br></p>
+      </td>
+      <td valign="top" class="td1">
+        <p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>};</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="td2">
+        <p class="p2"><span class="s1"></span><br></p>
+      </td>
+      <td valign="top" class="td1">
+        <p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;/</span><span class="s3">script</span><span class="s1">&gt;</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="td2">
+        <p class="p2"><span class="s1"></span><br></p>
+      </td>
+      <td valign="top" class="td1">
+        <p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/</span><span class="s3">body</span><span class="s1">&gt;</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="td2">
+        <p class="p2"><span class="s1"></span><br></p>
+      </td>
+      <td valign="top" class="td1">
+        <p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>hello world!</span></p>
+        <p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;button type=“button”&gt; sign in through google &lt;/button&gt;</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="td2">
+        <p class="p2"><span class="s1"></span><br></p>
+      </td>
+      <td valign="top" class="td1">
+        <p class="p3"><span class="s2">&lt;/</span><span class="s1">html</span><span class="s2">&gt;</span></p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</body>
 </html>
