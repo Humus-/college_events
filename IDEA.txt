@@ -24,7 +24,7 @@ automatic.
 Q: IF YES, HOW IS IT GOING TO BE DIFFERENT FROM EXISTING PRODUCTS?
 A:already answered :P
 +Current> Join a game lobby > Play (Less social interaction)
- Our Idea>  Join a Lobby (Not in game) > Meet people > Talk > Play > Have fun
+ Our Idea>  Join a Lobby (Not in game) > Meet people > Talk > Play > Hav
 
 Q: WHAT TECHNOLOGIES DO YOU WANT TO USE (OPTIONAL)?
 A:
