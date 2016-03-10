@@ -10,7 +10,8 @@ from flask.ext.login import LoginManager
 login_manager = LoginManager()
 login_manager.login_view = "login"
 login_manager.session_protection = "strong"
-login_manager.setup_app(app)
+#setup_app depricated ,therefore use init_app 
+login_manager.init_app(app)
 
 bootstrap = Bootstrap(app)
 
