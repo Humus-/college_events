@@ -26,7 +26,7 @@ $ python run.py
 * Enable social login.
 * Send verification mail to complete registration.
 * Add captcha to registration form.
-
+* Consider the requirement of adding phone number to the users table from sqlalchemy_utils package
 ## License
 ----
 GNU General Public License v3

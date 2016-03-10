@@ -70,10 +70,10 @@ class Activity(db.Model):
     event_id = db.Column(db.Integer, db.ForeignKey('event.id'))
     
     admins = db.relationship('User',secondary=admins,
-        backref = db.backref('lobby', lazy = 'dynamic') )
+        backref = db.backref('admin', lazy = 'dynamic') )
     
     attends = db.relationship('User',secondary=attends,
-        backref = db.backref('lobby',lazy = 'dynamic') )
+        backref = db.backref('activities',lazy = 'dynamic') )
     
     def __init__(self,name,description,date,partno=None,part_id=None):
         """
@@ -117,6 +117,6 @@ class Event(db.Model):
     end_date = db.Column( db.DateTime )
     
     activities = db.relationship('Activity', backref = 
-            db.backref('event',lazy = 'dynamic') )
+            db.backref('event',lazy = 'joined') )
             
 
