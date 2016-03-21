@@ -23,7 +23,7 @@ def login():
         print db
         form = LoginForm()
         if form.validate_on_submit():
-            user = User.query.get(form.email.data)
+            user = User.query.filter_by(email=form.email.data).first()
             if user:
                 if check_password_hash(user.password, form.password.data):
                     user.authenticated = True
@@ -61,3 +61,4 @@ def register():
             return redirect(url_for("dashboard.dashboard_page"))
         return render_template("home/login.html", form=form)
 
+#@home.route("/profile/<username>")
