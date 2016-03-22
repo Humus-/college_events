@@ -1,5 +1,5 @@
-from flask.ext.wtf import Form
-from wtforms import StringField, PasswordField, BooleanField, SubmitField
+from flask.ext.wtf import Form, RecaptchaField
+from wtforms import StringField, PasswordField, BooleanField, SubmitField, IntegerField, DateField
 from wtforms.validators import Required, Length, Email, Regexp, EqualTo
 from wtforms import ValidationError
 from ..models import User
@@ -10,6 +10,7 @@ class LoginForm(Form):
                                              Email()])
     password = PasswordField('Password', validators=[Required()])
     remember_me = BooleanField('Keep me logged in', default=True)
+    recaptcha = RecaptchaField()
     submit = SubmitField('Log In')
 
 class RegisterForm(Form):
@@ -31,3 +32,15 @@ class RegisterForm(Form):
     def validate_username(self, field):
         if User.query.filter_by(username=field.data).first():
             raise ValidationError('Username already exists')
+            
+class LobbyCreateForm(Form):
+    name = StringField('Lobby Name', validators=[Required(),Length(3-10)])
+    description = StringField('Description', validators=[Required()])
+#    lobby_type = TO_BE_ADDED
+    max_entries = IntegerField('Maximum Entries allowed')
+    date = DateField('Date')
+    submit = SubmitField('Create Lobby')
+    
+    def validate_name(self, field):
+        if Activity.query.filter_by(name=field.data).first():
+            raise ValidationError('Lobby already exists')
