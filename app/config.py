@@ -8,7 +8,7 @@ app.secret_key = 'myverylongsecretkey'
 # Flask-Login setup
 from flask.ext.login import LoginManager
 login_manager = LoginManager()
-login_manager.login_view = "login"
+login_manager.login_view = "home.login"
 login_manager.session_protection = "strong"
 #setup_app depricated ,therefore use init_app 
 login_manager.init_app(app)
@@ -30,7 +30,8 @@ db.session.commit()
 from .views.dashboard import dashboard
 from .views.profile import profile
 from .views.home import home
+from .views.events import events
 app.register_blueprint(home)
 app.register_blueprint(dashboard)
 app.register_blueprint(profile)
-
+app.register_blueprint(events)

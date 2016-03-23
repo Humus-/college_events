@@ -1,16 +1,15 @@
 from flask.ext.wtf import Form, RecaptchaField
-from wtforms import StringField, PasswordField, BooleanField, SubmitField, IntegerField, DateField
+from wtforms import StringField, PasswordField, BooleanField, SubmitField, IntegerField, DateField, TextAreaField
 from wtforms.validators import Required, Length, Email, Regexp, EqualTo
 from wtforms import ValidationError
-from ..models import User
-
+from ..models import User,Activity
 
 class LoginForm(Form):
     email = StringField('Email', validators=[Required(), Length(1, 64), 
                                              Email()])
     password = PasswordField('Password', validators=[Required()])
     remember_me = BooleanField('Keep me logged in', default=True)
-    recaptcha = RecaptchaField()
+#    recaptcha = RecaptchaField()
     submit = SubmitField('Log In')
 
 class RegisterForm(Form):
@@ -35,7 +34,7 @@ class RegisterForm(Form):
             
 class LobbyCreateForm(Form):
     name = StringField('Lobby Name', validators=[Required(),Length(3-10)])
-    description = StringField('Description', validators=[Required()])
+    description = TextAreaField('Description', validators=[Required()])
 #    lobby_type = TO_BE_ADDED
     max_entries = IntegerField('Maximum Entries allowed')
     date = DateField('Date')
