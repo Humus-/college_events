@@ -8,8 +8,8 @@ events = Blueprint('events', __name__)
 
 @events.route('/events')
 def loadevents():
-#       form = EventsForm()
-       events = Events.query.all()
+    events = Events.query.all()
+    return render_temlate('event/view_events.html',events=events)
        
 @events.route('/createlobby', methods=["GET", "POST"])
 @login_required
@@ -33,8 +33,24 @@ def createlobby():
             db.session.add(lobby)
             db.session.commit()
             
-            return render_template('event/view_lobbies.html')
+            lobbies = Activity.query.all()
+            return redirect(url_for("events.lobby_details",id=lobby.get_id() ) )
         else:
             return "Lobby already exists"
     
     return render_template('event/create_lobby.html', form=form)
+    
+@events.route('/lobby/<id>')
+def lobby_details(id):
+    lobby = Activity.query.filter_by(id = id).first()
+    current_user_id = current_user.get_id()
+    if not lobby :
+        return "Lobby does not Exist"
+    print lobby.admins
+    if current_user_id in lobby.admins:
+        return render_template('event/lobby_details.html',lobby=lobby,admin=True)
+    return render_template('event/lobby_details.html',lobby=lobby,admin=False)
+    
+#@events.route('/editlobby/<id>')
+#def edit_lobby(id):
+#    form=EditLobbyForm()

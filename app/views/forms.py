@@ -43,3 +43,14 @@ class LobbyCreateForm(Form):
     def validate_name(self, field):
         if Activity.query.filter_by(name=field.data).first():
             raise ValidationError('Lobby already exists')
+            
+class EditLobbyForm(Form):
+    name = StringField('Lobby Name', validators=[Required(),Length(3-10)])
+    description = TextAreaField('Description', validators=[Required()])
+#    lobby_type = TO_BE_ADDED
+    max_entries = IntegerField('Maximum Entries allowed')
+    date = DateField('Date')
+#    Add_admin = 
+    
+#    new_part = ButtonField('Extend the event')
+    submit = SubmitField('Edit Lobby')
