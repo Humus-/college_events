@@ -1,5 +1,5 @@
 from flask.ext.wtf import Form, RecaptchaField
-from wtforms import StringField, PasswordField, BooleanField, SubmitField, IntegerField, DateField, TextAreaField
+from wtforms import StringField, PasswordField, BooleanField, SubmitField, IntegerField, DateField, TextAreaField,SelectField
 from wtforms.validators import Required, Length, Email, Regexp, EqualTo
 from wtforms import ValidationError
 from ..models import User,Activity
@@ -35,7 +35,13 @@ class RegisterForm(Form):
 class LobbyCreateForm(Form):
     name = StringField('Lobby Name', validators=[Required(),Length(3-10)])
     description = TextAreaField('Description', validators=[Required()])
-#    lobby_type = TO_BE_ADDED
+#    lobby_type = SelectMultipleField('Type',choices=)
+    lobby_type = SelectField('Event Type',choices = [
+            ('Other','Select'),
+            ('Game','Game'),
+            ('Quiz','Quiz'),
+            ('Exhibition','Exhibition'),
+            ('Concert','Concert')])
     max_entries = IntegerField('Maximum Entries allowed')
     date = DateField('Date')
     submit = SubmitField('Create Lobby')
@@ -47,7 +53,12 @@ class LobbyCreateForm(Form):
 class EditLobbyForm(Form):
     name = StringField('Lobby Name', validators=[Required(),Length(3-10)])
     description = TextAreaField('Description', validators=[Required()])
-#    lobby_type = TO_BE_ADDED
+#    lobby_type = SelectField('Event Type',choices = [
+#            ('-','Select'),
+#            ('Game','Game'),
+#            ('Quiz','Quiz'),
+#            ('Exhibition','Exhibition'),
+#            ('Concert','Concert')],value = )
     max_entries = IntegerField('Maximum Entries allowed')
     date = DateField('Date')
 #    Add_admin = 

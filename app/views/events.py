@@ -25,7 +25,7 @@ def createlobby():
                 form.date.data)
             if form.max_entries.data: 
                 lobby.max_entries=form.max_entries.data #create a setter function
-                
+            lobby.type = form.lobby_type.data
             print "Inserting into lobby"
             
             lobby.admins.append(current_user)

@@ -54,12 +54,13 @@ class Activity(db.Model):
     name = db.Column( db.String(20), unique=True, nullable=False)
     description = db.Column( db.Text(160) )
     type = db.Column(db.Enum(
+                        'Other',
                         'Game',
                         'Quiz',
                         'Exhibition',
                         'Concert',
                         name='Event_tags')
-                   ,default=None)
+                   ,default='Other')
     max_entries = db.Column( db.Integer )
     attending = db.Column( db.Integer )
     date = db.Column(db.DateTime)
