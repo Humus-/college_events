@@ -53,15 +53,24 @@ class LobbyCreateForm(Form):
 class EditLobbyForm(Form):
     name = StringField('Lobby Name', validators=[Required(),Length(3-10)])
     description = TextAreaField('Description', validators=[Required()])
-#    lobby_type = SelectField('Event Type',choices = [
-#            ('-','Select'),
-#            ('Game','Game'),
-#            ('Quiz','Quiz'),
-#            ('Exhibition','Exhibition'),
-#            ('Concert','Concert')],value = )
+    lobby_type = SelectField('Event Type',choices = [
+            ('-','Select'),
+            ('Game','Game'),
+            ('Quiz','Quiz'),
+            ('Exhibition','Exhibition'),
+            ('Concert','Concert')])
     max_entries = IntegerField('Maximum Entries allowed')
     date = DateField('Date')
 #    Add_admin = 
     
-#    new_part = ButtonField('Extend the event')
+    new_part = SubmitField('Extend the event')
     submit = SubmitField('Edit Lobby')
+    
+    def __init__(self,id):
+        super(EditLobbyForm,self).__init__()
+        lobby = Activity.query.filter_by(id=id).first()
+        self.name.data = lobby.name
+        self.description.data = lobby.description
+#        lobby_type.default = 
+        self.max_entries.data = lobby.max_entries
+        self.date.data = lobby.date

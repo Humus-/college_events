@@ -2,3 +2,12 @@ Name : {{lobby.name}}
 <br/>
 Description : {{lobby.description}}
 <br/>
+Admins Are:
+<br />
+{% for admin in lobby.admins %}
+    {{admin.username}}
+{% endfor %}
+<br />
+{% if admin==True %}
+    You are the admin of this lobby..u can change it if u want
+{% endif %}

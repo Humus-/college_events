@@ -2,7 +2,7 @@ from flask import Blueprint, render_template, redirect, url_for
 from ..config import db
 from ..models import User,Activity,Event,admins,attends
 from flask.ext.login import current_user, login_required
-from forms import LobbyCreateForm
+from forms import LobbyCreateForm,EditLobbyForm
 
 events = Blueprint('events', __name__)
 
@@ -13,7 +13,7 @@ def loadevents():
        
 @events.route('/createlobby', methods=["GET", "POST"])
 @login_required
-def createlobby():
+def createlobby(part=1,partid=None):
     """For GET requests, display the create lobby form. For POSTS, create the lobby
         by processing the form."""
     form = LobbyCreateForm()
@@ -46,11 +46,24 @@ def lobby_details(id):
     current_user_id = current_user.get_id()
     if not lobby :
         return "Lobby does not Exist"
-    print lobby.admins
-    if current_user_id in lobby.admins:
-        return render_template('event/lobby_details.html',lobby=lobby,admin=True)
-    return render_template('event/lobby_details.html',lobby=lobby,admin=False)
+    #debug info,will remove in next push
+    print "asdf"
+    print lobby.admins[0].username
+    print "qwer"
     
-#@events.route('/editlobby/<id>')
-#def edit_lobby(id):
-#    form=EditLobbyForm()
+    admin=False
+    if current_user in lobby.admins:
+        admin=True
+    return render_template('event/lobby_details.html',lobby=lobby,admin=admin)
+    
+
+
+@events.route('/editlobby/<id>')
+def edit_lobby(id):
+    form=EditLobbyForm(id)
+    if form.validate_on_submit():
+        if form.new_part:
+            return "Stuff"
+        elif 5==3:
+            url_for("events.createlobby",part=1)
+    return render_template('event/edit_lobby.html',form=form)
