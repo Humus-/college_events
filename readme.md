@@ -27,8 +27,10 @@ $ python run.py
 * Send verification mail to complete registration.
 * Add captcha to registration form.
 * Consider the requirement of adding phone number to the users table from sqlalchemy_utils package
-* Add the view lobby functionality and use appropriate algorithm to choose the lobbys to be displayed to different users
-* Add the tags field to the lobby and event form
+* Add the appropriate algorithm to choose the lobbys to be displayed to different users
+* Add the expand lobby functionality
+* Add User profiles
+* Add edit lobby
 ## License
 ----
 GNU General Public License v3

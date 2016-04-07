@@ -13,7 +13,7 @@ def loadevents():
        
 @events.route('/createlobby', methods=["GET", "POST"])
 @login_required
-def createlobby(part=1,partid=None):
+def createlobby():
     """For GET requests, display the create lobby form. For POSTS, create the lobby
         by processing the form."""
     form = LobbyCreateForm()
@@ -56,9 +56,10 @@ def lobby_details(id):
         admin=True
     return render_template('event/lobby_details.html',lobby=lobby,admin=admin)
     
-
+#@events.route('/expandlobby/<id>/<partno>')
 
 @events.route('/editlobby/<id>')
+@login_required
 def edit_lobby(id):
     form=EditLobbyForm(id)
     if form.validate_on_submit():
