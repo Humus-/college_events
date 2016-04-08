@@ -33,7 +33,10 @@ class RegisterForm(Form):
             raise ValidationError('Username already exists')
             
 class LobbyCreateForm(Form):
-    name = StringField('Lobby Name', validators=[Required(),Length(3-10)])
+    name = StringField('Lobby Name', validators=[Required(),Length(3-10)
+                            , Regexp('^[A-Za-z][A-Za-z0-9_.]*$', 0,
+                                'Lobby must have only letters, '
+                                'numbers, dots or underscores')])
     description = TextAreaField('Description', validators=[Required()])
 #    lobby_type = SelectMultipleField('Type',choices=)
     lobby_type = SelectField('Event Type',choices = [
@@ -63,7 +66,7 @@ class EditLobbyForm(Form):
     date = DateField('Date')
     Add_admin = TextAreaField('Add new Admin')#add validators etc
     Add_admin_button = SubmitField('Add Admin')
-    new_part = SubmitField('Extend the event')
+    new_part = SubmitField('Extend the Lobby')
     submit = SubmitField('Edit Lobby')
     
     def __init__(self,id):

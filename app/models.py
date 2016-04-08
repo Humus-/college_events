@@ -85,8 +85,8 @@ class Activity(db.Model):
     *attending- number of users attending the event.Atlest one user must attend for the lobby to exist (creator or admin can be included),therefore attending =1
     
     If a new slot of the event is being created then the function expects 2 more arguments
-    *partno-the next slot number of the event
-    *part_id - the event id of the first slot (this groups together all the different parts of the same event),in case there is only 1 part then the part_id is same as its event id
+    *partno-the next slot number of the event ,default part no is 1
+    *part_id - the event id of the first slot (this groups together all the different parts of the same event),in case there is only 1 part then the part_id is same as its event id (the default value of part_id is id as defined in the table definition)
         """
         self.name = name
         self.description = description
@@ -99,6 +99,7 @@ class Activity(db.Model):
             self.part_id=partid
         elif part_id:
             raise Exception("part argument expected")
+        
     
     def is_active(self):
         """True if event date is not yet over"""
