@@ -96,7 +96,7 @@ class Activity(db.Model):
             if not part_id:
                 raise Exception("part_id argument expected")
             self.part=partno
-            self.part_id=partid
+            self.part_id=part_id
         elif part_id:
             raise Exception("part argument expected")
         
