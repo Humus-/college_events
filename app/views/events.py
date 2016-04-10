@@ -63,8 +63,7 @@ def expand_lobby(id):
     if it exists ,checkif the user is allowed to change the loby details.
     For GET requests, display the create lobby form. For POSTS, create the lobby
     by processing the form."""
-    lobby_last_part = Activity.query.filter_by(part_id = id).order_by(Activity.part_id).first_or_404()
-#    print Activity.query.filter_by(part_id = id).first_or_404()
+    lobby_last_part = Activity.query.filter_by(part_id = id).order_by(Activity.part.desc()).first_or_404()
     if lobby_last_part ==None:
         return "Lobby does not exist"
     if not current_user in lobby_last_part.admins:
@@ -80,7 +79,7 @@ def expand_lobby(id):
             parent_lobby.name+'@'+str(lobby_last_part.part+1),#name of new lobby part = name@partno
             form.description.data,
             form.date.data,
-            partno=lobby_last_part.part,
+            partno=lobby_last_part.part+1,
             part_id=parent_lobby.id)
         if form.max_entries.data: 
             lobby.max_entries = form.max_entries.data #create a setter function
@@ -111,7 +110,7 @@ def edit_lobby(id):
     
     if form.validate_on_submit():
         if form.new_part.data:
-            return redirect(url_for("events.expand_lobby",id=id ) )
+            return redirect(url_for("events.expand_lobby",id=lobby.part_id ) )
         elif form.Add_admin_button.data and not form.Add_admin.data == None:
             user = User.query.filter_by(username = form.Add_admin.data).first()
             if user != None:
