@@ -47,7 +47,6 @@ def createlobby():
 @events.route('/lobby/<id>')
 def lobby_details(id):
     lobby = Activity.query.filter_by(id = id).first()
-    current_user_id = current_user.get_id()
     if not lobby :
         return "Lobby does not Exist"
     
@@ -99,7 +98,7 @@ def expand_lobby(id):
     return render_template('event/create_lobby.html', form=form)
     
 
-@events.route('/editlobby/<id>')
+@events.route('/editlobby/<id>', methods=["GET", "POST"])
 @login_required
 def edit_lobby(id):
     lobby = Activity.query.filter_by(id=id).first()
@@ -111,9 +110,19 @@ def edit_lobby(id):
     form=EditLobbyForm(id)
     
     if form.validate_on_submit():
-        if form.new_part:
+        if form.new_part.data:
             return redirect(url_for("events.expand_lobby",id=id ) )
-        elif 5==3:
-            url_for("events.createlobby",part=1)
-    return render_template('event/edit_lobby.html',form=form)
+        elif form.Add_admin_button.data and not form.Add_admin.data == None:
+            user = User.query.filter_by(username = form.Add_admin.data).first()
+            if user != None:
+                lobby.admins.append(user)
+                db.session.commit()
+        else:
+            lobby.name = form.name.data
+            lobby.description = form.description.data
+            lobby.max_entries = form.max_entries.data
+            lobby.date = form.date.data
+            lobby.type = form.lobby_type.data
+            db.session.commit()
+    return render_template('event/edit_lobby.html',form=form,lobby=lobby)
 

@@ -5,3 +5,9 @@
 {% else %}
     {{ wtf.quick_form(form) }}
 {% endif %}
+Admins are:
+<br/>
+{% for admin in lobby.admins %}
+    {{admin.username}}
+    <br />
+{% endfor %}
