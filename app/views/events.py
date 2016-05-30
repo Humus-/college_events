@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, redirect, url_for
+from flask import Blueprint, render_template, redirect, url_for, jsonify
 from ..config import db
 from ..models import User,Activity,Event,admins,attends
 from flask.ext.login import current_user, login_required
@@ -8,9 +8,14 @@ events = Blueprint('events', __name__)
 
 @events.route('/events')
 def loadevents():
-    events = Events.query.all()
-    return render_temlate('event/view_events.html',events=events)
-       
+    events = Event.query.all()
+    return render_template('event/view_events.html',events=events)
+
+@events.route('/getevents')
+def get_events():
+    events = Event.query.all()
+    return jsonify(events)
+
 @events.route('/createlobby', methods=["GET", "POST"])
 @login_required
 def createlobby():
