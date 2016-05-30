@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block head %}
+<title> Signup </title>
+{% endblock head %}
+{% block body %}
+{% import "bootstrap/wtf.html" as wtf %}
+<form class="ui form" method="post">
+    <div class="field">
+        <label>Email</label>
+        <div class="ui left input">
+            {{ form.email(placeholder='yourname@email.com') }}
+        </div>
+    </div>
+    <div class="field">
+        <label>Username</label>
+        <div class="ui left input">
+            {{ form.username }}
+        </div>
+    </div>
+
+    <div class="field">
+        <label>Password</label>
+        <div class="ui left input">
+            {{ form.password }}
+        </div>
+    </div>
+    <div class="field">
+        <label>Confirm Password</label>
+        <div class="ui left input">
+            {{ form.password2 }}
+        </div>
+    </div>
+
+    <div style="color:red">
+        <p>{{ error }}</p>
+    </div>
+
+    {{ form.csrf_token }}
+    <button class="ui blue submit button" type="submit">Signup</button>
+</form>
+
+{% endblock body %}
+

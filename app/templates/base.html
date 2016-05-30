@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/semantic.min.css') }}">
+        {% block head %}
+        {% endblock head %}
+    </head>
+    <body>    
+            <div class="ui borderless menu">
+            <a class="item">
+                Evento
+            </a>
+
+            <div class="right menu">
+            <a class="item">
+                Events
+            </a>
+            <a class="item">
+                Leaderboard
+            </a>
+            <a class="item">
+                My Profile
+            </a>
+            <a class="item">
+                About Us
+            </a>
+            <a class="item" href="/logout">
+                Login/Logout
+            </a>
+            </div>
+        </div>
+    <div class="ui raised very padded text container segment">
+        {% block body %}
+        {% endblock body %}
+    </div>
+    </body>
+</html>
