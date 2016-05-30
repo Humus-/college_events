@@ -21,7 +21,7 @@ $ python run.py
 ### TODO
 * Add front end templates.
 * Add follow user feature.
-* Add events model.
+* ~~Add events model.~~
 * Add event related views (host event, view event, join event, leave event etc).
 * Enable social login.
 * Send verification mail to complete registration.
@@ -31,6 +31,7 @@ $ python run.py
 * Add the expand lobby functionality
 * Add User profiles
 * Add edit lobby
+* Provide an API. Use it to generate views on client-side (using JS, JQuery).
 ## License
-----
+---
 GNU General Public License v3
