@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/semantic.min.css') }}">
@@ -5,32 +6,39 @@
         {% endblock head %}
     </head>
     <body>    
-            <div class="ui borderless menu">
+        <div class="ui borderless menu">
             <a class="item">
                 Evento
             </a>
 
             <div class="right menu">
-            <a class="item">
-                Events
-            </a>
-            <a class="item">
-                Leaderboard
-            </a>
-            <a class="item">
-                My Profile
-            </a>
-            <a class="item">
-                About Us
-            </a>
-            <a class="item" href="/logout">
-                Login/Logout
-            </a>
+                <a class="item" href='/events'>
+                    Events
+                </a>
+                <a class="item">
+                    Leaderboard
+                </a>
+                <a class="item">
+                    My Profile
+                </a>
+                <a class="item">
+                    About Us
+                </a>
+                <a class="item" href="/logout">
+                    Login/Logout
+                </a>
             </div>
         </div>
-    <div class="ui raised very padded text container segment">
-        {% block body %}
-        {% endblock body %}
-    </div>
+        <div class="ui raised very padded text container segment">
+            {% block body %}
+            {% endblock body %}
+        </div>
+        <script type=text/javascript>
+              $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
+        </script>
+        <script src="{{ url_for('static', filename='js/jquery-2.2.4.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/semantic.min.js') }}"></script>
+        {% block scripts %}
+        {% endblock scripts %}
     </body>
 </html>

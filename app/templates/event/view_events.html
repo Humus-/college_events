@@ -1,3 +1,11 @@
-{% for event in events %}
-     {{event.name}}
-{% endfor %}
+{% extends "base.html" %}
+{% block head %}
+<title>Events</title>
+{% endblock head %}
+{% block body %}
+<div id="event_list">
+</div>
+{% endblock body %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/event_js.js') }}"></script>
+{% endblock scripts %}

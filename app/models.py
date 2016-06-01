@@ -120,5 +120,20 @@ class Event(db.Model):
     
     activities = db.relationship('Activity', backref = 
             db.backref('event',lazy = 'joined') )
-            
+       
+    def __init__(self, id, name, desc, start, end):
+        self.id = id
+        self.name = name
+        self.description = desc
+        self.start_date = start
+        self.end_date = end
+
+    def serialize(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'description': self.description,
+            'start_date': self.start_date,
+            'end_date': self.end_date
+        }
 

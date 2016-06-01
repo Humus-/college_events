@@ -26,6 +26,10 @@ from models import *
 db.create_all()
 db.session.commit()
 
+#Static image location
+app.config['UPLOAD_FOLDER'] = 'static/images'
+app.config['ALLOWED_EXTENSIONS'] = set(['png', 'jpg', 'jpeg', 'gif'])
+
 # Register blueprints
 from .views.dashboard import dashboard
 from .views.profile import profile

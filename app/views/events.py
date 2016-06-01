@@ -1,20 +1,33 @@
-from flask import Blueprint, render_template, redirect, url_for, jsonify
+from flask import Blueprint, render_template, redirect, url_for, jsonify, send_from_directory
 from ..config import db
 from ..models import User,Activity,Event,admins,attends
 from flask.ext.login import current_user, login_required
 from forms import LobbyCreateForm,EditLobbyForm
+import os
 
-events = Blueprint('events', __name__)
+static_folder = os.path.join(os.pardir, 'static')
+events = Blueprint('events', __name__, static_folder=static_folder, static_url_path='/static')
 
 @events.route('/events')
 def loadevents():
-    events = Event.query.all()
-    return render_template('event/view_events.html',events=events)
+    return render_template('event/view_events.html')
 
 @events.route('/getevents')
 def get_events():
-    events = Event.query.all()
-    return jsonify(events)
+    return jsonify(events=[event.serialize() for event in Event.query.all()])
+
+"""
+@events.route('/image/<path:path>')
+def send_image(path):
+        return send_from_directory('static/images', path)
+"""
+
+# Fake route to test
+# FIXME: User send_image instead
+@events.route('/abc')
+def root():
+        # return "<html>yes</html>"
+        return events.send_static_file('images/dota2.jpg')
 
 @events.route('/createlobby', methods=["GET", "POST"])
 @login_required

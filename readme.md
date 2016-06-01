@@ -32,6 +32,7 @@ $ python run.py
 * Add User profiles
 * Add edit lobby
 * Provide an API. Use it to generate views on client-side (using JS, JQuery).
+
 ## License
 ---
 GNU General Public License v3
